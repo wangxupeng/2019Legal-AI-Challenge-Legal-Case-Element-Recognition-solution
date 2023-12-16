@@ -98,3 +98,50 @@ Loan =
 
 #### Split multi-labels into single labels and then count:
 ![data_distribution.png](./pic/data_distribution.png "")
+
+
+We can see that the marriage and family category accounts for 22% of the elements. Labor disputes category accounts for 11% of the elements. Loan contracts category accounts for 15% of the elements. Most of the sentences do not have relevant element information.
+
+#### The distribution of data for the top 20 categories of marriage and family:
+![top20.jpg](./pic/top20.jpg "")
+
+#### The distribution of data for the top 20 categories of labor disputes:
+![label_top20.jpg](./pic/label_top20.jpg "")
+
+#### The distribution of data for the top 20 categories of loan contracts:
+![loan_top20.jpg](./pic/loan_top20.jpg "")
+
+From the above three graphs, it can be seen that __the data follows a severe long-tailed distribution__. After reviewing numerous papers, we found that label embedding can effectively solve this problem.
+
+After reviewing many papers, we finally found inspiration from label embeddings[1] and achieved good results.
+
+Next, let's take a look at the model's input and labels.
+
+In the model input, we not only input the text but also add the corresponding category labels into Bert[2] (the final model is XLnet[3]), as follows:
+```python
+[CLS] Plaintiff Xie Chunyou alleges that the plaintiff and defendant divorced due to emotional discord in March 2014, and the court of Hengyang County ruled that the girl Zhou Yin (born on September 8, 2001, now studying at Zhengyang Middle School in Xidu Town, Hengyang County) born of the marriage should be raised by the defendant. [SEP] (Having Children After Marriage)...(Personal Property After Marriage)[SEP]
+```
+Labels: One-hot encoding is performed on different labels.
+
+#### Model structure
+![model_structure.png](./pic/model_structure.png "")
+![model_structure2.png](./pic/model_structure2.png "")
+
+The following is a comparison between the results with and without the use of label embedding.
+![plus_label_embedding.jpg](./pic/plus_label_embedding.jpg "")
+As we can see, the addition of label embedding has significantly improved the performance.
+
+The following image shows the final results of our competition, and our team name is "hua".
+![hua.png](./pic/hua.png "")
+
+Here is our award-winning photo, LOL.
+![photo.jpg](./pic/photo.jpg "")
+Thanks to the award we received, I caught the attention of the CEO and CTO of Nanjing Aerospace Smart Technology Co., Ltd. Eventually, I was invited to join the Aerospace Science and Technology AI Laboratory. Looking back, it was an amazing experience.
+
+---
+__Reference__:
+[1]Wang, S., Jiang, Z., Zheng, H.-T., & Li, B. (2018). Joint Embedding of Words and Labels for Text Classification. arXiv. arXiv:1805.04174.
+
+[2]Devlin, J., Chang, M. W., Lee, K., & Toutanova, K. (2018). Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805.
+
+[3]Yang, Z., Dai, Z., Yang, Y., Carbonell, J. G., Salakhutdinov, R. R., & Le, Q. V. (2019). XLNet: Generalized Autoregressive Pretraining for Language Understanding. arXiv preprint arXiv:1906.08237.
