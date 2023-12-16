@@ -131,9 +131,6 @@ The following is a comparison between the results with and without the use of la
 ![plus_label_embedding.jpg](./pic/plus_label_embedding.jpg "")
 As we can see, the addition of label embedding has significantly improved the performance.
 
-The following image shows the final results of our competition, and our team name is "hua".
-![hua.png](./pic/hua.png "")
-
 Here is our award-winning photo, LOL.
 ![photo.jpg](./pic/photo.jpg "")
 Thanks to the award we received, I caught the attention of the CEO and CTO of Nanjing Aerospace Smart Technology Co., Ltd. Eventually, I was invited to join the Aerospace Science and Technology AI Laboratory. Looking back, it was an amazing experience.
