@@ -97,4 +97,4 @@ Loan =
 ```
 
 #### Split multi-labels into single labels and then count:
-![data_distribution.png](./pic/data_distribution.png)
+![data_distribution.png](./pic/data_distribution.png "")
