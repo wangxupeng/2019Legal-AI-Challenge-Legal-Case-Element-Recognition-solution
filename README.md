@@ -95,3 +95,6 @@ Loan =
 "Transfer of debt by debtor",
 "Unclear agreed interest rate"]
 ```
+
+#### Split multi-labels into single labels and then count:
+![data_distribution.png](,/pic/data_distribution.png "")
